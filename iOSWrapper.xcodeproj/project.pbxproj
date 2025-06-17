@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E636A532E01361A00F4ED15 /* iOSWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E636A472E01361A00F4ED15 /* iOSWrapper.framework */; };
+		0E636A742E0151ED00F4ED15 /* path_provider_foundation.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E636A702E0151ED00F4ED15 /* path_provider_foundation.xcframework */; };
+		0E636A752E0151ED00F4ED15 /* App.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E636A6D2E0151ED00F4ED15 /* App.xcframework */; };
+		0E636A762E0151ED00F4ED15 /* sqflite_darwin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E636A722E0151ED00F4ED15 /* sqflite_darwin.xcframework */; };
+		0E636A772E0151ED00F4ED15 /* shared_preferences_foundation.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E636A712E0151ED00F4ED15 /* shared_preferences_foundation.xcframework */; };
+		0E636A782E0151ED00F4ED15 /* Flutter.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E636A6E2E0151ED00F4ED15 /* Flutter.xcframework */; };
+		0E636A792E0151ED00F4ED15 /* FlutterPluginRegistrant.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E636A6F2E0151ED00F4ED15 /* FlutterPluginRegistrant.xcframework */; };
+		0E636A7B2E01528B00F4ED15 /* ClevercardsFlutterWrapper.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 0E636A7A2E01528300F4ED15 /* ClevercardsFlutterWrapper.podspec */; };
+		0E636A832E0155C700F4ED15 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0E636A822E0155C500F4ED15 /* .gitignore */; };
+		D1E1423709D84B2EF3323F54 /* Pods_iOSWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F72003E60BAB3F0E08630D5 /* Pods_iOSWrapper.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0E636A542E01361A00F4ED15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E636A3E2E01361A00F4ED15 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E636A462E01361A00F4ED15;
+			remoteInfo = iOSWrapper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0E636A472E01361A00F4ED15 /* iOSWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iOSWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E636A522E01361A00F4ED15 /* iOSWrapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSWrapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E636A6D2E0151ED00F4ED15 /* App.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = App.xcframework; sourceTree = "<group>"; };
+		0E636A6E2E0151ED00F4ED15 /* Flutter.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:S8QB4VV633:FLUTTER.IO LLC"; lastKnownFileType = wrapper.xcframework; path = Flutter.xcframework; sourceTree = "<group>"; };
+		0E636A6F2E0151ED00F4ED15 /* FlutterPluginRegistrant.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FlutterPluginRegistrant.xcframework; sourceTree = "<group>"; };
+		0E636A702E0151ED00F4ED15 /* path_provider_foundation.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = path_provider_foundation.xcframework; sourceTree = "<group>"; };
+		0E636A712E0151ED00F4ED15 /* shared_preferences_foundation.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = shared_preferences_foundation.xcframework; sourceTree = "<group>"; };
+		0E636A722E0151ED00F4ED15 /* sqflite_darwin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = sqflite_darwin.xcframework; sourceTree = "<group>"; };
+		0E636A7A2E01528300F4ED15 /* ClevercardsFlutterWrapper.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = ClevercardsFlutterWrapper.podspec; sourceTree = "<group>"; };
+		0E636A822E0155C500F4ED15 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		216B0990D4CBDD19BB02D206 /* Pods-iOSWrapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSWrapper.release.xcconfig"; path = "Target Support Files/Pods-iOSWrapper/Pods-iOSWrapper.release.xcconfig"; sourceTree = "<group>"; };
+		3F72003E60BAB3F0E08630D5 /* Pods_iOSWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF5568B3CAA9A57C611C115E /* Pods-iOSWrapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSWrapper.debug.xcconfig"; path = "Target Support Files/Pods-iOSWrapper/Pods-iOSWrapper.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		0E636A492E01361A00F4ED15 /* iOSWrapper */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = iOSWrapper;
+			sourceTree = "<group>";
+		};
+		0E636A562E01361A00F4ED15 /* iOSWrapperTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = iOSWrapperTests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0E636A442E01361A00F4ED15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E636A742E0151ED00F4ED15 /* path_provider_foundation.xcframework in Frameworks */,
+				0E636A752E0151ED00F4ED15 /* App.xcframework in Frameworks */,
+				0E636A762E0151ED00F4ED15 /* sqflite_darwin.xcframework in Frameworks */,
+				0E636A772E0151ED00F4ED15 /* shared_preferences_foundation.xcframework in Frameworks */,
+				0E636A782E0151ED00F4ED15 /* Flutter.xcframework in Frameworks */,
+				0E636A792E0151ED00F4ED15 /* FlutterPluginRegistrant.xcframework in Frameworks */,
+				D1E1423709D84B2EF3323F54 /* Pods_iOSWrapper.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E636A4F2E01361A00F4ED15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E636A532E01361A00F4ED15 /* iOSWrapper.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E636A3D2E01361A00F4ED15 = {
+			isa = PBXGroup;
+			children = (
+				0E636A822E0155C500F4ED15 /* .gitignore */,
+				0E636A7A2E01528300F4ED15 /* ClevercardsFlutterWrapper.podspec */,
+				0E636A492E01361A00F4ED15 /* iOSWrapper */,
+				0E636A562E01361A00F4ED15 /* iOSWrapperTests */,
+				0E636A482E01361A00F4ED15 /* Products */,
+				AB03E481D1C316EC016579BD /* Pods */,
+				1B2A38280AF5DC45E39E61A3 /* Frameworks */,
+				0E636A732E0151ED00F4ED15 /* Release */,
+			);
+			sourceTree = "<group>";
+		};
+		0E636A482E01361A00F4ED15 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0E636A472E01361A00F4ED15 /* iOSWrapper.framework */,
+				0E636A522E01361A00F4ED15 /* iOSWrapperTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0E636A732E0151ED00F4ED15 /* Release */ = {
+			isa = PBXGroup;
+			children = (
+				0E636A6D2E0151ED00F4ED15 /* App.xcframework */,
+				0E636A6E2E0151ED00F4ED15 /* Flutter.xcframework */,
+				0E636A6F2E0151ED00F4ED15 /* FlutterPluginRegistrant.xcframework */,
+				0E636A702E0151ED00F4ED15 /* path_provider_foundation.xcframework */,
+				0E636A712E0151ED00F4ED15 /* shared_preferences_foundation.xcframework */,
+				0E636A722E0151ED00F4ED15 /* sqflite_darwin.xcframework */,
+			);
+			path = Release;
+			sourceTree = "<group>";
+		};
+		1B2A38280AF5DC45E39E61A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F72003E60BAB3F0E08630D5 /* Pods_iOSWrapper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB03E481D1C316EC016579BD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FF5568B3CAA9A57C611C115E /* Pods-iOSWrapper.debug.xcconfig */,
+				216B0990D4CBDD19BB02D206 /* Pods-iOSWrapper.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0E636A422E01361A00F4ED15 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0E636A462E01361A00F4ED15 /* iOSWrapper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E636A5B2E01361A00F4ED15 /* Build configuration list for PBXNativeTarget "iOSWrapper" */;
+			buildPhases = (
+				742DB8D1DC49BCF2CD9DEE0E /* [CP] Check Pods Manifest.lock */,
+				0E636A422E01361A00F4ED15 /* Headers */,
+				244191EC27D9C9C67D5B3810 /* [CP-User] Run Flutter Build clevercard_module Script */,
+				0E636A432E01361A00F4ED15 /* Sources */,
+				0E636A442E01361A00F4ED15 /* Frameworks */,
+				0E636A452E01361A00F4ED15 /* Resources */,
+				69D794EC34E0F438316D4290 /* [CP-User] Embed Flutter Build clevercard_module Script */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				0E636A492E01361A00F4ED15 /* iOSWrapper */,
+			);
+			name = iOSWrapper;
+			productName = iOSWrapper;
+			productReference = 0E636A472E01361A00F4ED15 /* iOSWrapper.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		0E636A512E01361A00F4ED15 /* iOSWrapperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E636A5E2E01361A00F4ED15 /* Build configuration list for PBXNativeTarget "iOSWrapperTests" */;
+			buildPhases = (
+				0E636A4E2E01361A00F4ED15 /* Sources */,
+				0E636A4F2E01361A00F4ED15 /* Frameworks */,
+				0E636A502E01361A00F4ED15 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E636A552E01361A00F4ED15 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				0E636A562E01361A00F4ED15 /* iOSWrapperTests */,
+			);
+			name = iOSWrapperTests;
+			productName = iOSWrapperTests;
+			productReference = 0E636A522E01361A00F4ED15 /* iOSWrapperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0E636A3E2E01361A00F4ED15 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					0E636A462E01361A00F4ED15 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					0E636A512E01361A00F4ED15 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+				};
+			};
+			buildConfigurationList = 0E636A412E01361A00F4ED15 /* Build configuration list for PBXProject "iOSWrapper" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0E636A3D2E01361A00F4ED15;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 0E636A482E01361A00F4ED15 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0E636A462E01361A00F4ED15 /* iOSWrapper */,
+				0E636A512E01361A00F4ED15 /* iOSWrapperTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0E636A452E01361A00F4ED15 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E636A832E0155C700F4ED15 /* .gitignore in Resources */,
+				0E636A7B2E01528B00F4ED15 /* ClevercardsFlutterWrapper.podspec in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E636A502E01361A00F4ED15 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		244191EC27D9C9C67D5B3810 /* [CP-User] Run Flutter Build clevercard_module Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP-User] Run Flutter Build clevercard_module Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../../clevercard-module/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
+		};
+		69D794EC34E0F438316D4290 /* [CP-User] Embed Flutter Build clevercard_module Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP-User] Embed Flutter Build clevercard_module Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../../clevercard-module/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh embed_and_thin";
+		};
+		742DB8D1DC49BCF2CD9DEE0E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOSWrapper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0E636A432E01361A00F4ED15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E636A4E2E01361A00F4ED15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0E636A552E01361A00F4ED15 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E636A462E01361A00F4ED15 /* iOSWrapper */;
+			targetProxy = 0E636A542E01361A00F4ED15 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0E636A592E01361A00F4ED15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0E636A5A2E01361A00F4ED15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		0E636A5C2E01361A00F4ED15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF5568B3CAA9A57C611C115E /* Pods-iOSWrapper.debug.xcconfig */;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.clevercards.ios.wrapper.iOSWrapper;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0E636A5D2E01361A00F4ED15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 216B0990D4CBDD19BB02D206 /* Pods-iOSWrapper.release.xcconfig */;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.clevercards.ios.wrapper.iOSWrapper;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0E636A5F2E01361A00F4ED15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clevercards.ios.wrapper.iOSWrapperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0E636A602E01361A00F4ED15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clevercards.ios.wrapper.iOSWrapperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0E636A412E01361A00F4ED15 /* Build configuration list for PBXProject "iOSWrapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E636A592E01361A00F4ED15 /* Debug */,
+				0E636A5A2E01361A00F4ED15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E636A5B2E01361A00F4ED15 /* Build configuration list for PBXNativeTarget "iOSWrapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E636A5C2E01361A00F4ED15 /* Debug */,
+				0E636A5D2E01361A00F4ED15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E636A5E2E01361A00F4ED15 /* Build configuration list for PBXNativeTarget "iOSWrapperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E636A5F2E01361A00F4ED15 /* Debug */,
+				0E636A602E01361A00F4ED15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0E636A3E2E01361A00F4ED15 /* Project object */;
+}
