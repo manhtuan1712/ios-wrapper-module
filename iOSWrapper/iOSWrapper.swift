@@ -15,7 +15,7 @@ public class FlutterModuleWrapper {
     private let engine: FlutterEngine
     
     private init() {
-        let flutterBundle = findFlutterBundle() ?? Bundle.main
+        let flutterBundle = Self.findFlutterBundle() ?? Bundle.main
         let dartProject = FlutterDartProject(precompiledDartBundle: flutterBundle)
         
         engine = FlutterEngine(name: "clevercards_engine", project: dartProject, allowHeadlessExecution: true)
@@ -28,7 +28,7 @@ public class FlutterModuleWrapper {
         }
     }
     
-    private func findFlutterBundle() -> Bundle? {
+    private static func findFlutterBundle() -> Bundle? {
         let allBundles = Bundle.allBundles + Bundle.allFrameworks
         for bundle in allBundles {
             if bundle.path(forResource: "flutter_assets", ofType: nil) != nil {
