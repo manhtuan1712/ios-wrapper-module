@@ -16,7 +16,6 @@ xcuserdata/
 Pods/
 *.xcconfig
 *.lock
-*.podspec
 
 # Carthage
 Carthage/
