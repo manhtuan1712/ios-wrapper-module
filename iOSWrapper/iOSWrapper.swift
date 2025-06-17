@@ -15,12 +15,17 @@ public class FlutterModuleWrapper {
     private let engine: FlutterEngine
     
     private init() {
-        engine = FlutterEngine(name: "clevercards_engine")
-        let runConfig = FlutterDartProject(precompiledDartBundle: nil)
-        let success = engine.run(withEntrypoint: nil, libraryURI: nil, initialRoute: nil, entrypointArgs: nil)
+        let dartProject = FlutterDartProject(precompiledDartBundle: Bundle(for: type(of: self)))
+
+        engine = FlutterEngine(name: "clevercards_engine", project: dartProject, allowHeadlessExecution: true)
+
+        let success = engine.run(withEntrypoint: nil)
         print("✅ Flutter engine started? \(success)")
+        
         if success {
             GeneratedPluginRegistrant.register(with: engine)
+        } else {
+            print("❌ Flutter engine failed to start.")
         }
     }
     
