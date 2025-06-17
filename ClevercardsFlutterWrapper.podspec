@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   s.script_phases = [
     {
       :name => 'Select Appropriate Flutter Frameworks',
-      :script => 'if [[ "$PLATFORM_NAME" == "iphonesimulator"* ]] && [ -d "${PODS_TARGET_SRCROOT}/Debug" ]; then echo "📱 Simulator build detected - using Debug frameworks"; find "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}" -name "*.xcframework" -exec rm -rf {} + 2>/dev/null || true; cp -R "${PODS_TARGET_SRCROOT}/Debug"/*.xcframework "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/" 2>/dev/null || true; else echo "📱 Device build detected - using Release frameworks"; fi',
+      :script => 'echo "🔧 Script running - Platform: $PLATFORM_NAME, Configuration: $CONFIGURATION"; if [[ "$PLATFORM_NAME" == "iphonesimulator"* ]] && [ -d "${PODS_TARGET_SRCROOT}/Debug" ]; then echo "📱 Using Debug frameworks for simulator"; rm -rf "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"/App.xcframework; rm -rf "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"/Flutter.xcframework; rm -rf "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"/FlutterPluginRegistrant.xcframework; cp -R "${PODS_TARGET_SRCROOT}/Debug"/*.xcframework "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/"; echo "✅ Debug frameworks copied"; else echo "📱 Using Release frameworks for device"; fi',
       :execution_position => :after_compile
     }
   ]
