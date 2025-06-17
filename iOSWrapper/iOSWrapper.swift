@@ -13,7 +13,7 @@ public class FlutterModuleWrapper {
     
     private let engine: FlutterEngine
     
-    private init() {
+    public init() {
         engine = FlutterEngine(name: "clevercards_engine")
         engine.run()
     }
