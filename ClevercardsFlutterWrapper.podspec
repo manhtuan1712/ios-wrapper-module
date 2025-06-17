@@ -14,22 +14,24 @@ Pod::Spec.new do |s|
     'DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER' => 'NO'
   }
   
-  s.ios.vendored_frameworks = 'Release/*.xcframework'
-  
   # Preserve both Debug and Release directories
   s.preserve_paths = 'Debug', 'Release'
   
-  s.prepare_command = 'if [ -d "Debug" ]; then echo "Debug frameworks available for simulator testing"; else echo "Only Release frameworks available - create Debug frameworks with: flutter build ios-framework --debug --output=Debug/"; fi'
+  # Prepare command to set up the right frameworks before build
+  s.prepare_command = 'if [ -d "Debug" ]; then echo "Setting up frameworks for simulator/debug builds"; mkdir -p Release-Backup; if [ ! -d "Release-Backup/App.xcframework" ]; then cp -R Release/*.xcframework Release-Backup/ 2>/dev/null || true; fi; else echo "Only Release frameworks available - create Debug frameworks with: flutter build ios-framework --debug --output=Debug/"; fi'
   
   s.source_files = 'iOSWrapper/*.{h,m,swift}'
   
   s.swift_version = '5.0'
   
+  # Use Debug frameworks for simulator, Release for device
+  s.ios.vendored_frameworks = 'Release/*.xcframework'
+  
   s.script_phases = [
     {
-      :name => 'Select Appropriate Flutter Frameworks',
-      :script => 'echo "🔧 Script running - Platform: $PLATFORM_NAME, Configuration: $CONFIGURATION"; echo "🔍 Checking paths:"; echo "   PODS_TARGET_SRCROOT: ${PODS_TARGET_SRCROOT}"; echo "   Debug dir exists: $([ -d "${PODS_TARGET_SRCROOT}/Debug" ] && echo "YES" || echo "NO")"; if [[ "$PLATFORM_NAME" == "iphonesimulator"* ]] && [ -d "${PODS_TARGET_SRCROOT}/Debug" ]; then echo "📱 Using Debug frameworks for simulator"; APP_FRAMEWORKS_DIR="${CODESIGNING_FOLDER_PATH}/Frameworks"; echo "🎯 Target directory: $APP_FRAMEWORKS_DIR"; mkdir -p "$APP_FRAMEWORKS_DIR"; rm -rf "$APP_FRAMEWORKS_DIR"/App.xcframework; rm -rf "$APP_FRAMEWORKS_DIR"/Flutter.xcframework; rm -rf "$APP_FRAMEWORKS_DIR"/FlutterPluginRegistrant.xcframework; cp -R "${PODS_TARGET_SRCROOT}/Debug"/*.xcframework "$APP_FRAMEWORKS_DIR/"; echo "✅ Debug frameworks copied to: $APP_FRAMEWORKS_DIR"; echo "🔍 Verifying copy:"; find "$APP_FRAMEWORKS_DIR" -name "kernel_blob.bin" | head -3; ls -la "$APP_FRAMEWORKS_DIR"/ | grep App; else echo "📱 Using Release frameworks for device"; fi',
-      :execution_position => :after_compile
+      :name => 'Setup Flutter Frameworks for Platform',
+      :script => 'echo "🔧 Platform: $PLATFORM_NAME, SDK: $SDK_NAME"; if [[ "$SDK_NAME" == *"simulator"* ]] && [ -d "${PODS_TARGET_SRCROOT}/Debug" ]; then echo "📱 Simulator - switching to Debug frameworks"; rm -rf "${PODS_TARGET_SRCROOT}/Release"/*.xcframework; cp -R "${PODS_TARGET_SRCROOT}/Debug"/*.xcframework "${PODS_TARGET_SRCROOT}/Release/"; echo "✅ Debug frameworks active in Release folder"; else echo "📱 Device - using Release frameworks"; if [ -d "${PODS_TARGET_SRCROOT}/Release-Backup" ]; then rm -rf "${PODS_TARGET_SRCROOT}/Release"/*.xcframework; cp -R "${PODS_TARGET_SRCROOT}/Release-Backup"/*.xcframework "${PODS_TARGET_SRCROOT}/Release/"; fi; echo "✅ Release frameworks active"; fi',
+      :execution_position => :before_compile
     }
   ]
 end
