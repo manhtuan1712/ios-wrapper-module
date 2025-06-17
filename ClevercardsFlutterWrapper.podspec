@@ -28,20 +28,7 @@ Pod::Spec.new do |s|
   s.script_phases = [
     {
       :name => 'Setup Flutter Frameworks',
-      :script => <<-SCRIPT
-        if [ "$CONFIGURATION" = "Debug" ] && [ -d "${PODS_TARGET_SRCROOT}/Debug" ]; then
-          echo "Using debug Flutter frameworks for simulator"
-          # Remove release frameworks
-          rm -rf "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}"/App.xcframework
-          rm -rf "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}"/Flutter.xcframework
-          rm -rf "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}"/FlutterPluginRegistrant.xcframework
-          # Copy debug frameworks
-          cp -R "${PODS_TARGET_SRCROOT}/Debug"/*.xcframework "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/"
-        else
-          echo "Using release Flutter frameworks"
-        fi
-      SCRIPT
-      ,
+      :script => 'if [ "$CONFIGURATION" = "Debug" ] && [ -d "${PODS_TARGET_SRCROOT}/Debug" ]; then echo "Using debug Flutter frameworks for simulator"; rm -rf "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}"/App.xcframework; rm -rf "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}"/Flutter.xcframework; rm -rf "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}"/FlutterPluginRegistrant.xcframework; cp -R "${PODS_TARGET_SRCROOT}/Debug"/*.xcframework "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/"; else echo "Using release Flutter frameworks"; fi',
       :execution_position => :after_compile
     }
   ]
