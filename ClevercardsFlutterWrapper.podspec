@@ -8,27 +8,43 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/manhtuan1712/flutter-module.git', :tag => s.version.to_s }
   s.ios.deployment_target = '13.0'
   
-  # Exclude Mac Catalyst to avoid framework compatibility issues
   s.pod_target_xcconfig = {
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386',
     'SUPPORTS_MACCATALYST' => 'NO',
     'DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER' => 'NO'
   }
   
-  # Use appropriate frameworks based on configuration
-  s.vendored_frameworks = 'Release/*.xcframework'
+  s.ios.vendored_frameworks = 'Release/*.xcframework'
   
-  # Include wrapper source files
+  s.prepare_command = <<-CMD
+    if [ -d "Debug" ]; then
+      echo "Debug frameworks available for simulator testing"
+    else
+      echo "Only Release frameworks available - create Debug frameworks with: flutter build ios-framework --debug --output=Debug/"
+    fi
+  CMD
+  
   s.source_files = 'iOSWrapper/*.{h,m,swift}'
   
-  # Swift version
   s.swift_version = '5.0'
   
-  # Copy debug frameworks for debug builds
   s.script_phases = [
     {
-      :name => 'Setup Flutter Frameworks',
-      :script => 'if [ "$CONFIGURATION" = "Debug" ] && [ -d "${PODS_TARGET_SRCROOT}/Debug" ]; then echo "Using debug Flutter frameworks for simulator"; rm -rf "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}"/App.xcframework; rm -rf "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}"/Flutter.xcframework; rm -rf "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}"/FlutterPluginRegistrant.xcframework; cp -R "${PODS_TARGET_SRCROOT}/Debug"/*.xcframework "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/"; else echo "Using release Flutter frameworks"; fi',
+      :name => 'Select Appropriate Flutter Frameworks',
+      :script => <<-SCRIPT
+        # Check if we're building for simulator and Debug frameworks exist
+        if [[ "$PLATFORM_NAME" == "iphonesimulator"* ]] && [ -d "${PODS_TARGET_SRCROOT}/Debug" ]; then
+          echo "📱 Simulator build detected - using Debug frameworks (with kernel_blob.bin)"
+          # Remove release frameworks that were copied
+          find "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}" -name "*.xcframework" -exec rm -rf {} + 2>/dev/null || true
+          # Copy debug frameworks
+          cp -R "${PODS_TARGET_SRCROOT}/Debug"/*.xcframework "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/" 2>/dev/null || true
+        else
+          echo "📱 Device build detected - using Release frameworks (native code)"
+          # Release frameworks are already copied by vendored_frameworks
+        fi
+      SCRIPT
+      ,
       :execution_position => :after_compile
     }
   ]
