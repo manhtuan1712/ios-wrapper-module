@@ -1,0 +1,42 @@
+# Xcode
+build/
+DerivedData/
+*.xcworkspace
+!Podfile
+!Podfile.lock
+!Pods/
+xcuserdata/
+*.xcuserstate
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# CocoaPods
+Pods/
+*.xcconfig
+*.lock
+*.podspec
+
+# Carthage
+Carthage/
+
+# Fastlane
+fastlane/report.xml
+fastlane/screenshots
+fastlane/test_output
+
+# Flutter
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+pubspec.lock
+
+# Others
+.DS_Store
+.idea/
+*.iml
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
