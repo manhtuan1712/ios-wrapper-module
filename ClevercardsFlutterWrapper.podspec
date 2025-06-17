@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ClevercardsFlutterWrapper'
-  s.version          = '1.0.7'
+  s.version          = '1.0.8'
   s.summary          = 'iOS wrapper for Clevercards Flutter module'
   s.homepage         = 'https://github.com/manhtuan1712/flutter-module'
   s.license          = { :type => 'MIT' }
@@ -21,17 +21,6 @@ Pod::Spec.new do |s|
   # Include wrapper source files
   s.source_files = 'iOSWrapper/*.{h,m,swift}'
   
-  # Required frameworks
-  s.frameworks = 'UIKit', 'Flutter'
-  
-  # Preserve Flutter assets
-  s.resource_bundles = {
-    'FlutterAssets' => ['Release/App.xcframework/ios-arm64/App.framework/flutter_assets/**/*']
-  }
-  
   # Swift version
   s.swift_version = '5.0'
-  
-  # Dependencies
-  s.dependency 'Flutter'
 end
