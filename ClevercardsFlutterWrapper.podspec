@@ -16,6 +16,9 @@ Pod::Spec.new do |s|
   
   s.ios.vendored_frameworks = 'Release/*.xcframework'
   
+  # Preserve both Debug and Release directories
+  s.preserve_paths = 'Debug', 'Release'
+  
   s.prepare_command = 'if [ -d "Debug" ]; then echo "Debug frameworks available for simulator testing"; else echo "Only Release frameworks available - create Debug frameworks with: flutter build ios-framework --debug --output=Debug/"; fi'
   
   s.source_files = 'iOSWrapper/*.{h,m,swift}'
@@ -25,7 +28,7 @@ Pod::Spec.new do |s|
   s.script_phases = [
     {
       :name => 'Select Appropriate Flutter Frameworks',
-      :script => 'echo "🔧 Script running - Platform: $PLATFORM_NAME, Configuration: $CONFIGURATION"; if [[ "$PLATFORM_NAME" == "iphonesimulator"* ]] && [ -d "${PODS_TARGET_SRCROOT}/Debug" ]; then echo "📱 Using Debug frameworks for simulator"; rm -rf "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"/App.xcframework; rm -rf "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"/Flutter.xcframework; rm -rf "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"/FlutterPluginRegistrant.xcframework; cp -R "${PODS_TARGET_SRCROOT}/Debug"/*.xcframework "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/"; echo "✅ Debug frameworks copied"; else echo "📱 Using Release frameworks for device"; fi',
+      :script => 'echo "🔧 Script running - Platform: $PLATFORM_NAME, Configuration: $CONFIGURATION"; echo "🔍 Checking paths:"; echo "   PODS_TARGET_SRCROOT: ${PODS_TARGET_SRCROOT}"; echo "   Debug dir exists: $([ -d "${PODS_TARGET_SRCROOT}/Debug" ] && echo "YES" || echo "NO")"; ls -la "${PODS_TARGET_SRCROOT}" | head -10; if [[ "$PLATFORM_NAME" == "iphonesimulator"* ]] && [ -d "${PODS_TARGET_SRCROOT}/Debug" ]; then echo "📱 Using Debug frameworks for simulator"; rm -rf "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"/App.xcframework; rm -rf "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"/Flutter.xcframework; rm -rf "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"/FlutterPluginRegistrant.xcframework; cp -R "${PODS_TARGET_SRCROOT}/Debug"/*.xcframework "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/"; echo "✅ Debug frameworks copied"; else echo "📱 Using Release frameworks for device"; fi',
       :execution_position => :after_compile
     }
   ]
