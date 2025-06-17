@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ClevercardsFlutterWrapper'
-  s.version          = '1.0.9'
+  s.version          = '1.1.0'
   s.summary          = 'iOS wrapper for Clevercards Flutter module'
   s.homepage         = 'https://github.com/manhtuan1712/flutter-module'
   s.license          = { :type => 'MIT' }
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
     'DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER' => 'NO'
   }
   
-  # Include all Flutter frameworks
+  # Use appropriate frameworks based on configuration
   s.vendored_frameworks = 'Release/*.xcframework'
   
   # Include wrapper source files
@@ -23,4 +23,26 @@ Pod::Spec.new do |s|
   
   # Swift version
   s.swift_version = '5.0'
+  
+  # Copy debug frameworks for debug builds
+  s.script_phases = [
+    {
+      :name => 'Setup Flutter Frameworks',
+      :script => <<-SCRIPT
+        if [ "$CONFIGURATION" = "Debug" ] && [ -d "${PODS_TARGET_SRCROOT}/Debug" ]; then
+          echo "Using debug Flutter frameworks for simulator"
+          # Remove release frameworks
+          rm -rf "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}"/App.xcframework
+          rm -rf "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}"/Flutter.xcframework
+          rm -rf "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}"/FlutterPluginRegistrant.xcframework
+          # Copy debug frameworks
+          cp -R "${PODS_TARGET_SRCROOT}/Debug"/*.xcframework "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/"
+        else
+          echo "Using release Flutter frameworks"
+        fi
+      SCRIPT
+      ,
+      :execution_position => :after_compile
+    }
+  ]
 end

@@ -15,27 +15,14 @@ public class FlutterModuleWrapper {
     private let engine: FlutterEngine
     
     private init() {
-        let flutterBundle = Self.findFlutterBundle() ?? Bundle.main
-        let dartProject = FlutterDartProject(precompiledDartBundle: flutterBundle)
-        
-        engine = FlutterEngine(name: "clevercards_engine", project: dartProject, allowHeadlessExecution: true)
+        engine = FlutterEngine(name: "clevercards_engine")
 
-        let success = engine.run(withEntrypoint: nil)
+        let success = engine.run()
         print("Flutter engine started: \(success)")
         
         if success {
             GeneratedPluginRegistrant.register(with: engine)
         }
-    }
-    
-    private static func findFlutterBundle() -> Bundle? {
-        let allBundles = Bundle.allBundles + Bundle.allFrameworks
-        for bundle in allBundles {
-            if bundle.path(forResource: "flutter_assets", ofType: nil) != nil {
-                return bundle
-            }
-        }
-        return nil
     }
     
     public func openFlutterModule(from viewController: UIViewController, message: String? = nil) {

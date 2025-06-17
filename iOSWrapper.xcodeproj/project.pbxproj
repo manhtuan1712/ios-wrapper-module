@@ -8,12 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0E636A532E01361A00F4ED15 /* iOSWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E636A472E01361A00F4ED15 /* iOSWrapper.framework */; };
-		0E636A742E0151ED00F4ED15 /* path_provider_foundation.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E636A702E0151ED00F4ED15 /* path_provider_foundation.xcframework */; };
-		0E636A752E0151ED00F4ED15 /* App.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E636A6D2E0151ED00F4ED15 /* App.xcframework */; };
-		0E636A762E0151ED00F4ED15 /* sqflite_darwin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E636A722E0151ED00F4ED15 /* sqflite_darwin.xcframework */; };
-		0E636A772E0151ED00F4ED15 /* shared_preferences_foundation.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E636A712E0151ED00F4ED15 /* shared_preferences_foundation.xcframework */; };
-		0E636A782E0151ED00F4ED15 /* Flutter.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E636A6E2E0151ED00F4ED15 /* Flutter.xcframework */; };
-		0E636A792E0151ED00F4ED15 /* FlutterPluginRegistrant.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E636A6F2E0151ED00F4ED15 /* FlutterPluginRegistrant.xcframework */; };
 		0E636A7B2E01528B00F4ED15 /* ClevercardsFlutterWrapper.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 0E636A7A2E01528300F4ED15 /* ClevercardsFlutterWrapper.podspec */; };
 		0E636A832E0155C700F4ED15 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0E636A822E0155C500F4ED15 /* .gitignore */; };
 		D1E1423709D84B2EF3323F54 /* Pods_iOSWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F72003E60BAB3F0E08630D5 /* Pods_iOSWrapper.framework */; };
@@ -40,6 +34,12 @@
 		0E636A722E0151ED00F4ED15 /* sqflite_darwin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = sqflite_darwin.xcframework; sourceTree = "<group>"; };
 		0E636A7A2E01528300F4ED15 /* ClevercardsFlutterWrapper.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = ClevercardsFlutterWrapper.podspec; sourceTree = "<group>"; };
 		0E636A822E0155C500F4ED15 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		0E636AFC2E01A04400F4ED15 /* App.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = App.xcframework; sourceTree = "<group>"; };
+		0E636AFD2E01A04400F4ED15 /* Flutter.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:S8QB4VV633:FLUTTER.IO LLC"; lastKnownFileType = wrapper.xcframework; path = Flutter.xcframework; sourceTree = "<group>"; };
+		0E636AFE2E01A04400F4ED15 /* FlutterPluginRegistrant.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FlutterPluginRegistrant.xcframework; sourceTree = "<group>"; };
+		0E636AFF2E01A04400F4ED15 /* path_provider_foundation.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = path_provider_foundation.xcframework; sourceTree = "<group>"; };
+		0E636B002E01A04400F4ED15 /* shared_preferences_foundation.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = shared_preferences_foundation.xcframework; sourceTree = "<group>"; };
+		0E636B012E01A04400F4ED15 /* sqflite_darwin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = sqflite_darwin.xcframework; sourceTree = "<group>"; };
 		216B0990D4CBDD19BB02D206 /* Pods-iOSWrapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSWrapper.release.xcconfig"; path = "Target Support Files/Pods-iOSWrapper/Pods-iOSWrapper.release.xcconfig"; sourceTree = "<group>"; };
 		3F72003E60BAB3F0E08630D5 /* Pods_iOSWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF5568B3CAA9A57C611C115E /* Pods-iOSWrapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSWrapper.debug.xcconfig"; path = "Target Support Files/Pods-iOSWrapper/Pods-iOSWrapper.debug.xcconfig"; sourceTree = "<group>"; };
@@ -63,12 +63,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E636A742E0151ED00F4ED15 /* path_provider_foundation.xcframework in Frameworks */,
-				0E636A752E0151ED00F4ED15 /* App.xcframework in Frameworks */,
-				0E636A762E0151ED00F4ED15 /* sqflite_darwin.xcframework in Frameworks */,
-				0E636A772E0151ED00F4ED15 /* shared_preferences_foundation.xcframework in Frameworks */,
-				0E636A782E0151ED00F4ED15 /* Flutter.xcframework in Frameworks */,
-				0E636A792E0151ED00F4ED15 /* FlutterPluginRegistrant.xcframework in Frameworks */,
 				D1E1423709D84B2EF3323F54 /* Pods_iOSWrapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +81,7 @@
 		0E636A3D2E01361A00F4ED15 = {
 			isa = PBXGroup;
 			children = (
+				0E636B022E01A04400F4ED15 /* Debug */,
 				0E636A822E0155C500F4ED15 /* .gitignore */,
 				0E636A7A2E01528300F4ED15 /* ClevercardsFlutterWrapper.podspec */,
 				0E636A492E01361A00F4ED15 /* iOSWrapper */,
@@ -118,6 +113,19 @@
 				0E636A722E0151ED00F4ED15 /* sqflite_darwin.xcframework */,
 			);
 			path = Release;
+			sourceTree = "<group>";
+		};
+		0E636B022E01A04400F4ED15 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				0E636AFC2E01A04400F4ED15 /* App.xcframework */,
+				0E636AFD2E01A04400F4ED15 /* Flutter.xcframework */,
+				0E636AFE2E01A04400F4ED15 /* FlutterPluginRegistrant.xcframework */,
+				0E636AFF2E01A04400F4ED15 /* path_provider_foundation.xcframework */,
+				0E636B002E01A04400F4ED15 /* shared_preferences_foundation.xcframework */,
+				0E636B012E01A04400F4ED15 /* sqflite_darwin.xcframework */,
+			);
+			path = Debug;
 			sourceTree = "<group>";
 		};
 		1B2A38280AF5DC45E39E61A3 /* Frameworks */ = {
