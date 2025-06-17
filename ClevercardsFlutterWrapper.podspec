@@ -16,13 +16,7 @@ Pod::Spec.new do |s|
   
   s.ios.vendored_frameworks = 'Release/*.xcframework'
   
-  s.prepare_command = <<-CMD
-    if [ -d "Debug" ]; then
-      echo "Debug frameworks available for simulator testing"
-    else
-      echo "Only Release frameworks available - create Debug frameworks with: flutter build ios-framework --debug --output=Debug/"
-    fi
-  CMD
+  s.prepare_command = 'if [ -d "Debug" ]; then echo "Debug frameworks available for simulator testing"; else echo "Only Release frameworks available - create Debug frameworks with: flutter build ios-framework --debug --output=Debug/"; fi'
   
   s.source_files = 'iOSWrapper/*.{h,m,swift}'
   
@@ -31,20 +25,7 @@ Pod::Spec.new do |s|
   s.script_phases = [
     {
       :name => 'Select Appropriate Flutter Frameworks',
-      :script => <<-SCRIPT
-        # Check if we're building for simulator and Debug frameworks exist
-        if [[ "$PLATFORM_NAME" == "iphonesimulator"* ]] && [ -d "${PODS_TARGET_SRCROOT}/Debug" ]; then
-          echo "📱 Simulator build detected - using Debug frameworks (with kernel_blob.bin)"
-          # Remove release frameworks that were copied
-          find "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}" -name "*.xcframework" -exec rm -rf {} + 2>/dev/null || true
-          # Copy debug frameworks
-          cp -R "${PODS_TARGET_SRCROOT}/Debug"/*.xcframework "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/" 2>/dev/null || true
-        else
-          echo "📱 Device build detected - using Release frameworks (native code)"
-          # Release frameworks are already copied by vendored_frameworks
-        fi
-      SCRIPT
-      ,
+      :script => 'if [[ "$PLATFORM_NAME" == "iphonesimulator"* ]] && [ -d "${PODS_TARGET_SRCROOT}/Debug" ]; then echo "📱 Simulator build detected - using Debug frameworks"; find "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}" -name "*.xcframework" -exec rm -rf {} + 2>/dev/null || true; cp -R "${PODS_TARGET_SRCROOT}/Debug"/*.xcframework "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/" 2>/dev/null || true; else echo "📱 Device build detected - using Release frameworks"; fi',
       :execution_position => :after_compile
     }
   ]
