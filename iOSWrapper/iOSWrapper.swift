@@ -7,15 +7,20 @@
 
 import UIKit
 import Flutter
+import FlutterPluginRegistrant
 
 public class FlutterModuleWrapper {
     public static let shared = FlutterModuleWrapper()
     
     private let engine: FlutterEngine
     
-    public init() {
+    private init() {
         engine = FlutterEngine(name: "clevercards_engine")
-        engine.run()
+        let success = engine.run()
+        print("✅ Flutter engine started? \(success)")
+        if success {
+            GeneratedPluginRegistrant.register(with: engine)
+        }
     }
     
     public func openFlutterModule(from viewController: UIViewController, message: String? = nil) {
