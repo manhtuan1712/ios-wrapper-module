@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ClevercardsFlutterWrapper'
-  s.version          = '1.2.4'
+  s.version          = '1.2.5'
   s.summary          = 'iOS wrapper for Clevercards Flutter module'
   s.homepage         = 'https://github.com/manhtuan1712/flutter-module'
   s.license          = { :type => 'MIT' }
@@ -12,7 +12,6 @@ Pod::Spec.new do |s|
   s.default_subspec = 'Release'
   
   s.subspec 'Release' do |release|
-    release.summary = 'Release frameworks for device builds'
     release.vendored_frameworks = 'Release/*.xcframework'
     release.source_files = 'iOSWrapper/*.{h,m,swift}'
     release.pod_target_xcconfig = {
@@ -22,7 +21,6 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'Debug' do |debug|
-    debug.summary = 'Debug frameworks for simulator builds'
     debug.vendored_frameworks = 'Debug/*.xcframework'
     debug.source_files = 'iOSWrapper/*.{h,m,swift}'
     debug.pod_target_xcconfig = {
