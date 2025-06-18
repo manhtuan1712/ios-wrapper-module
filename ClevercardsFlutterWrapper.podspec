@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ClevercardsFlutterWrapper'
-  s.version          = '1.1.8'
+  s.version          = '1.2.3'
   s.summary          = 'iOS wrapper for Clevercards Flutter module'
   s.homepage         = 'https://github.com/manhtuan1712/flutter-module'
   s.license          = { :type => 'MIT' }
@@ -11,7 +11,14 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig = {
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386',
     'SUPPORTS_MACCATALYST' => 'NO',
-    'DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER' => 'NO'
+    'DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER' => 'NO',
+    'CODE_SIGN_IDENTITY[sdk=iphonesimulator*]' => '',
+    'ENABLE_BITCODE' => 'NO'
+  }
+  
+  s.user_target_xcconfig = {
+    'CODE_SIGN_IDENTITY[sdk=iphonesimulator*]' => '',
+    'ENABLE_BITCODE' => 'NO'
   }
   
   # Preserve both directories
