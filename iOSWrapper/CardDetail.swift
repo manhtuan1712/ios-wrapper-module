@@ -5,20 +5,20 @@
 //  Created by Mập on 18/6/25.
 //
 
-struct CardDetail {
-    let cardId: String?
-    let giftCode: String?
-    let name: String?
-    let currency: String?
-    let originalBalance: Double?
-    let remainingBalance: Double?
-    let expiryDate: String?
-    let formattedPan: String?
-    let maskedPan: String?
-    let encryptedCvv: String?
-    let encryptedPan: String?
+public struct CardDetail {
+    public let cardId: String?
+    public let giftCode: String?
+    public let name: String?
+    public let currency: String?
+    public let originalBalance: Double?
+    public let remainingBalance: Double?
+    public let expiryDate: String?
+    public let formattedPan: String?
+    public let maskedPan: String?
+    public let encryptedCvv: String?
+    public let encryptedPan: String?
     
-    init(from data: [String: Any]) {
+    public init(from data: [String: Any]) {
         self.cardId = data["cardId"] as? String
         self.giftCode = data["giftCode"] as? String
         self.name = data["name"] as? String
