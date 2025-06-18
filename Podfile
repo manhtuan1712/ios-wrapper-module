@@ -2,7 +2,7 @@
 platform :ios, '13.0'
 
 # Path to the Flutter module relative to this Podfile
-flutter_module_path = '../../clevercard-module'
+flutter_module_path = '../clevercard-module'
 
 # Load Flutter module podhelper
 load File.join(flutter_module_path, '.ios', 'Flutter', 'podhelper.rb')
