@@ -17,16 +17,10 @@ Pod::Spec.new do |s|
   # Preserve both directories
   s.preserve_paths = 'Debug', 'Release'
   
-  # Use Release frameworks by default
+  # Use Debug frameworks for simulator testing
+  # Change to 'Release/*.xcframework' for device testing
   s.ios.vendored_frameworks = 'Debug/*.xcframework'
   
   s.source_files = 'iOSWrapper/*.{h,m,swift}'
   s.swift_version = '5.0'
-  
-  # Simple post-install hook to inform about manual Debug setup
-  s.post_install do |installer|
-    puts "📱 ClevercardsFlutterWrapper installed!"
-    puts "ℹ️  For SIMULATOR testing: manually change podspec to use Debug/*.xcframework"
-    puts "ℹ️  For DEVICE testing: use Release/*.xcframework (default)"
-  end
 end
