@@ -12,7 +12,7 @@ flutter build ios-framework --release --output=../ios-wrapper-module/
 cd ../ios-wrapper-module
 
 echo "🧹 Cleaning up _CodeSignature directories..."
-find Debug Release -name "_CodeSignature" -type d -exec rm -rf {} + 2>/dev/null || true
+find Debug Profile Release -name "_CodeSignature" -type d -exec rm -rf {} + 2>/dev/null || true
 
 echo "✅ Framework build complete!"
 echo ""

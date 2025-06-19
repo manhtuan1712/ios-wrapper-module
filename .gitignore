@@ -39,3 +39,6 @@ pubspec.lock
 *.ipa
 *.dSYM.zip
 *.dSYM
+
+# Flutter Framework Code Signatures (cause sandbox issues)
+**/_CodeSignature/

@@ -20,6 +20,9 @@ Pod::Spec.new do |s|
   # Preserve all build configuration directories
   s.preserve_paths = 'Debug', 'Profile', 'Release'
   
+  # Exclude _CodeSignature directories to prevent sandbox issues
+  s.exclude_files = '**/_CodeSignature/**'
+  
   # Create subspecs for different build configurations
   s.default_subspec = 'Release'
   
@@ -56,5 +59,5 @@ Pod::Spec.new do |s|
     }
   end
   
-  s.prepare_command = 'echo "📋 IMPORTANT: Ensure you have both Debug and Release Flutter frameworks. Run flutter build ios-framework for both --debug and --release modes."'
+  s.prepare_command = 'echo "📋 IMPORTANT: Ensure you have Debug, Profile, and Release Flutter frameworks."; echo "🧹 Cleaning up _CodeSignature directories..."; find . -name "_CodeSignature" -type d -exec rm -rf {} + 2>/dev/null || true; echo "✅ Clean frameworks ready for integration."'
 end
