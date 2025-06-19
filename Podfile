@@ -6,6 +6,7 @@ flutter_module_path = '../clevercard-module'
 
 # Load Flutter module podhelper
 load File.join(flutter_module_path, '.ios', 'Flutter', 'podhelper.rb')
+install_all_flutter_pods(flutter_module_path)
 
 target 'iOSWrapper' do
   use_frameworks!

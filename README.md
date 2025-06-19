@@ -6,37 +6,46 @@ iOS wrapper for easy integration of Clevercards Flutter module into native iOS a
 
 ### Step 1: Add to Podfile
 
-Add both the wrapper and direct Flutter integration to your Podfile:
+Add the wrapper to your Podfile with appropriate subspecs:
 
 ```ruby
 platform :ios, '13.0'
 
-# Path to your Flutter module (adjust path as needed)
-flutter_module_path = '../clevercard-module'
-
-# Load Flutter module podhelper
-load File.join(flutter_module_path, '.ios', 'Flutter', 'podhelper.rb')
-
 target 'YourApp' do
   use_frameworks!
   
-  # Install Flutter pods (REQUIRED)
-  install_all_flutter_pods(flutter_module_path)
-  
-  # Add the wrapper
-  pod 'ClevercardsFlutterWrapper'
+  # Match Flutter build configurations
+  pod 'ClevercardsFlutterWrapper/Debug', :configurations => ['Debug']
+  pod 'ClevercardsFlutterWrapper/Profile', :configurations => ['Profile']  
+  pod 'ClevercardsFlutterWrapper/Release', :configurations => ['Release']
 end
 
-# Post-install hook for Flutter compatibility
+# Post-install hook for compatibility
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
       config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
     end
   end
-  
-  flutter_post_install(installer) if defined?(flutter_post_install)
 end
+```
+
+#### Alternative: Single Subspec (Simpler)
+
+If you only need specific build configurations:
+
+```ruby
+# For debug builds (simulator)
+pod 'ClevercardsFlutterWrapper/Debug'
+
+# For profile builds (optimized simulator/device)
+pod 'ClevercardsFlutterWrapper/Profile'
+
+# For release builds (device)
+pod 'ClevercardsFlutterWrapper/Release'
+
+# For default (defaults to Release)
+pod 'ClevercardsFlutterWrapper'
 ```
 
 ### Step 2: Run Pod Install
@@ -106,17 +115,18 @@ class CardViewController: UIViewController {
 
 ## 🏗 Architecture
 
-This wrapper works in conjunction with direct Flutter integration:
+This wrapper provides a complete solution with pre-built Flutter frameworks:
 
-- **Direct Flutter Integration**: Handles the Flutter engine, runtime, and asset loading
+- **Pre-built Frameworks**: Includes Flutter engine and all required plugins
+- **Smart Platform Detection**: Automatically uses Debug frameworks for simulator, Release for device
 - **ClevercardsFlutterWrapper**: Provides a clean Swift API for native developers
 
 ### Why This Architecture?
 
-1. **Reliability**: Direct Flutter integration ensures proper asset loading and engine management
-2. **Compatibility**: Works with all Flutter versions and doesn't fight with Xcode's sandbox
-3. **Maintainability**: No need to rebuild frameworks for every Flutter update
-4. **Performance**: Single Flutter engine instance, no conflicts
+1. **Simplicity**: Single pod installation, no complex Flutter setup required
+2. **Reliability**: Pre-tested framework combinations
+3. **Compatibility**: Works without requiring Flutter SDK on developer machines
+4. **Performance**: Optimized frameworks for each platform
 
 ## 🔧 Requirements
 
@@ -142,15 +152,18 @@ static const cardService = MethodChannel('clevercard_module/card_service');
 
 ### Common Issues
 
-1. **Blank Screen**: Ensure you have both `install_all_flutter_pods()` AND the wrapper pod installed
-2. **Method Channel Errors**: Verify your Flutter module has the required method channels
-3. **Build Errors**: Make sure your Flutter module path is correct in the Podfile
+1. **Blank Screen on Simulator**: Ensure you're using the Debug subspec for simulator builds
+2. **Missing kernel_blob.bin**: Use `ClevercardsFlutterWrapper/Debug` for simulator
+3. **Method Channel Errors**: Verify your Flutter module has the required method channels  
+4. **Build Errors**: Clean build folder and reinstall pods if switching subspecs
 
 ### Debug Steps
 
-1. Check that Flutter frameworks are properly linked in your Xcode project
-2. Verify the Flutter module builds successfully with `flutter build ios`
-3. Ensure your iOS deployment target is 13.0 or higher
+1. Check which subspec you're using matches your build configuration
+2. For simulator issues, use: `pod 'ClevercardsFlutterWrapper/Debug'`
+3. For optimized builds, use: `pod 'ClevercardsFlutterWrapper/Profile'`
+4. For device/production, use: `pod 'ClevercardsFlutterWrapper/Release'`
+5. Ensure your iOS deployment target is 13.0 or higher
 
 ## 📚 API Reference
 
