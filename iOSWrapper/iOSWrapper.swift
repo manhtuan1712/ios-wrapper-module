@@ -12,23 +12,47 @@ import FlutterPluginRegistrant
 public class FlutterModuleWrapper {
     public static let shared = FlutterModuleWrapper()
     
-    private let engine: FlutterEngine
-    private let cardService: CardService
+    private var engine: FlutterEngine?
+    private var cardService: CardService?
     
     private init() {
-        engine = FlutterEngine(name: "clevercards_engine")
-
-        let success = engine.run()
+        // Don't create engine immediately - will be lazy loaded when needed
+    }
+    
+    private func getOrCreateEngine() -> FlutterEngine {
+        if let existingEngine = engine {
+            return existingEngine
+        }
+        
+        // Try to find existing Flutter engine first
+        if let existingEngine = findExistingFlutterEngine() {
+            engine = existingEngine
+            cardService = CardService(flutterEngine: existingEngine)
+            return existingEngine
+        }
+        
+        // Create new engine only if none exists
+        let newEngine = FlutterEngine(name: "clevercards_engine")
+        let success = newEngine.run()
         print("Flutter engine started: \(success)")
         
         if success {
-            GeneratedPluginRegistrant.register(with: engine)
+            GeneratedPluginRegistrant.register(with: newEngine)
         }
         
-        cardService = CardService(flutterEngine: engine)
+        engine = newEngine
+        cardService = CardService(flutterEngine: newEngine)
+        return newEngine
+    }
+    
+    private func findExistingFlutterEngine() -> FlutterEngine? {
+        // Look for existing Flutter engines in the app
+        // This prevents duplicate engine creation when Flutter is already integrated
+        return nil // For now, always create new - can be enhanced later
     }
     
     public func openFlutterModule(from viewController: UIViewController, message: String? = nil) {
+        let engine = getOrCreateEngine()
         let flutterViewController = FlutterViewController(engine: engine, nibName: nil, bundle: nil)
         
         if let message = message {
@@ -46,14 +70,22 @@ public class FlutterModuleWrapper {
     /// - Returns: CardDetail object containing card information
     /// - Throws: Error if the operation fails
     public func getCardDetail(giftCode: String) async throws -> CardDetail {
-        return try await cardService.getCardDetail(giftCode: giftCode)
+        let _ = getOrCreateEngine() // Ensure engine is ready
+        guard let service = cardService else {
+            throw NSError(domain: "FlutterModuleWrapper", code: -1, userInfo: [NSLocalizedDescriptionKey: "Card service not initialized"])
+        }
+        return try await service.getCardDetail(giftCode: giftCode)
     }
     
     /// Retrieves card tokens from the service
     /// - Returns: String containing the card token
     /// - Throws: Error if the operation fails
     public func getCardTokens() async throws -> String {
-        return try await cardService.getCardToken()
+        let _ = getOrCreateEngine() // Ensure engine is ready
+        guard let service = cardService else {
+            throw NSError(domain: "FlutterModuleWrapper", code: -1, userInfo: [NSLocalizedDescriptionKey: "Card service not initialized"])
+        }
+        return try await service.getCardToken()
     }
     
     /// Decrypts an encrypted card piece
@@ -61,7 +93,11 @@ public class FlutterModuleWrapper {
     /// - Returns: String containing the decrypted piece
     /// - Throws: Error if the operation fails
     public func decryptCardPiece(encryptedPiece: String) async throws -> String {
-        return try await cardService.decryptCardPiece(encryptedPiece: encryptedPiece)
+        let _ = getOrCreateEngine() // Ensure engine is ready
+        guard let service = cardService else {
+            throw NSError(domain: "FlutterModuleWrapper", code: -1, userInfo: [NSLocalizedDescriptionKey: "Card service not initialized"])
+        }
+        return try await service.decryptCardPiece(encryptedPiece: encryptedPiece)
     }
 }
 
