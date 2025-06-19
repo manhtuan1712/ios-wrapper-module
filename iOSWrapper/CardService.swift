@@ -6,6 +6,7 @@
 //
 
 import Flutter
+import Foundation
 
 class CardService {
     private let channel: FlutterMethodChannel
@@ -30,8 +31,9 @@ class CardService {
                     return
                 }
                 
-                if result is FlutterMethodNotImplemented {
-                    continuation.resume(throwing: NSError(domain: "CardService", code: -5, userInfo: [NSLocalizedDescriptionKey: "Method 'initializeCardModule' not implemented on Flutter side"]))
+                // Check for method not implemented (typically nil or specific error)
+                if result == nil {
+                    continuation.resume(throwing: NSError(domain: "CardService", code: -4, userInfo: [NSLocalizedDescriptionKey: "No response received from Flutter method channel"]))
                     return
                 }
                 
@@ -70,11 +72,6 @@ class CardService {
                     return
                 }
                 
-                if result is FlutterMethodNotImplemented {
-                    continuation.resume(throwing: NSError(domain: "CardService", code: -5, userInfo: [NSLocalizedDescriptionKey: "Method 'getCardDetail' not implemented on Flutter side"]))
-                    return
-                }
-                
                 // Handle successful response
                 if let responseDict = result as? [String: Any] {
                     if let success = responseDict["success"] as? Bool, success {
@@ -104,12 +101,6 @@ class CardService {
                 if let error = result as? FlutterError {
                     // Flutter returned an error
                     continuation.resume(throwing: NSError(domain: "CardService", code: Int(error.code) ?? -1, userInfo: [NSLocalizedDescriptionKey: error.message ?? "Flutter method error"]))
-                    return
-                }
-                
-                if result is FlutterMethodNotImplemented {
-                    // Method not implemented on Flutter side
-                    continuation.resume(throwing: NSError(domain: "CardService", code: -5, userInfo: [NSLocalizedDescriptionKey: "Method 'getCardToken' not implemented on Flutter side"]))
                     return
                 }
                 
@@ -152,11 +143,6 @@ class CardService {
                     return
                 }
                 
-                if result is FlutterMethodNotImplemented {
-                    continuation.resume(throwing: NSError(domain: "CardService", code: -5, userInfo: [NSLocalizedDescriptionKey: "Method 'decryptCardPiece' not implemented on Flutter side"]))
-                    return
-                }
-                
                 // Handle successful response
                 if let responseDict = result as? [String: Any] {
                     if let success = responseDict["success"] as? Bool, success {
@@ -193,11 +179,6 @@ class CardService {
                 // Handle FlutterMethodChannel result (Any?)
                 if let error = result as? FlutterError {
                     continuation.resume(throwing: NSError(domain: "CardService", code: Int(error.code) ?? -1, userInfo: [NSLocalizedDescriptionKey: error.message ?? "Flutter method error"]))
-                    return
-                }
-                
-                if result is FlutterMethodNotImplemented {
-                    continuation.resume(throwing: NSError(domain: "CardService", code: -5, userInfo: [NSLocalizedDescriptionKey: "Method 'decryptCardDetails' not implemented on Flutter side"]))
                     return
                 }
                 
