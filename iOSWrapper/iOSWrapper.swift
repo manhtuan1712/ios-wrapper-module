@@ -57,20 +57,7 @@ public class FlutterModuleWrapper {
         viewController.present(flutterViewController, animated: true, completion: nil)
     }
     
-    // MARK: - Card Service Methods (Callback-based)
-    
-    /// Retrieves card tokens from the service with completion handler
-    /// - Parameter completion: Callback with Result<String, Error>
-    public func getCardTokens(completion: @escaping (Result<String, Error>) -> Void) {
-        let _ = getOrCreateEngine() // Ensure engine is ready
-        guard let service = cardService else {
-            completion(.failure(NSError(domain: "FlutterModuleWrapper", code: -1, userInfo: [NSLocalizedDescriptionKey: "Card service not initialized"])))
-            return
-        }
-        service.getCardToken(completion: completion)
-    }
-    
-    // MARK: - Card Service Methods (Async/await)
+    // MARK: - Card Service Methods
     
     /// Retrieves card details for a given gift code
     /// - Parameter giftCode: The gift code for the card
