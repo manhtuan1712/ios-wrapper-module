@@ -54,16 +54,23 @@ public class FlutterModuleWrapper {
     public func openFlutterModule(from viewController: UIViewController, message: String? = nil) {
         let engine = getOrCreateEngine()
         let flutterViewController = FlutterViewController(engine: engine, nibName: nil, bundle: nil)
-        
-        if let message = message {
-            let channel = FlutterMethodChannel(name: "clevercards/message", binaryMessenger: engine.binaryMessenger)
-            channel.invokeMethod("setMessage", arguments: message)
-        }
-        
         viewController.present(flutterViewController, animated: true, completion: nil)
     }
     
-    // MARK: - Card Service Methods
+    // MARK: - Card Service Methods (Callback-based)
+    
+    /// Retrieves card tokens from the service with completion handler
+    /// - Parameter completion: Callback with Result<String, Error>
+    public func getCardTokens(completion: @escaping (Result<String, Error>) -> Void) {
+        let _ = getOrCreateEngine() // Ensure engine is ready
+        guard let service = cardService else {
+            completion(.failure(NSError(domain: "FlutterModuleWrapper", code: -1, userInfo: [NSLocalizedDescriptionKey: "Card service not initialized"])))
+            return
+        }
+        service.getCardToken(completion: completion)
+    }
+    
+    // MARK: - Card Service Methods (Async/await)
     
     /// Retrieves card details for a given gift code
     /// - Parameter giftCode: The gift code for the card
