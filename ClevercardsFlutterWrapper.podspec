@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ClevercardsFlutterWrapper'
-  s.version          = '1.2.5'
+  s.version          = '1.2.7'
   s.summary          = 'iOS wrapper for Clevercards Flutter module'
   s.homepage         = 'https://github.com/manhtuan1712/flutter-module'
   s.license          = { :type => 'MIT' }
