@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ClevercardsFlutterWrapper'
-  s.version          = '1.3.5'
+  s.version          = '1.3.6'
   s.summary          = 'iOS wrapper for Clevercards Flutter module'
   s.homepage         = 'https://github.com/manhtuan1712/flutter-module'
   s.license          = { :type => 'MIT' }
@@ -60,4 +60,18 @@ Pod::Spec.new do |s|
   end
   
   s.prepare_command = 'echo "📋 IMPORTANT: Ensure you have Debug, Profile, and Release Flutter frameworks."; echo "🧹 Cleaning up _CodeSignature directories..."; find . -name "_CodeSignature" -type d -exec rm -rf {} + 2>/dev/null || true; echo "✅ Clean frameworks ready for integration."'
+  
+  # Post install script to clean up any remaining _CodeSignature directories
+  s.script_phase = [
+    {
+      :name => 'Pre-Build Cleanup _CodeSignature',
+      :script => 'echo "🧹 Pre-build: Removing _CodeSignature directories..."; find "${PODS_ROOT}/ClevercardsFlutterWrapper" -name "_CodeSignature" -type d -exec rm -rf {} + 2>/dev/null || true; echo "✅ Pre-build _CodeSignature cleanup complete"',
+      :execution_position => :before_compile
+    },
+    {
+      :name => 'Pre-Embed Cleanup _CodeSignature',
+      :script => 'echo "🧹 Pre-embed: Removing _CodeSignature directories..."; find "${BUILT_PRODUCTS_DIR}" -name "_CodeSignature" -type d -exec rm -rf {} + 2>/dev/null || true; find "${TARGET_BUILD_DIR}" -name "_CodeSignature" -type d -exec rm -rf {} + 2>/dev/null || true; echo "✅ Pre-embed _CodeSignature cleanup complete"',
+      :execution_position => :before_headers
+    }
+  ]
 end
