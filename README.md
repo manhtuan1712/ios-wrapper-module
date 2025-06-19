@@ -117,9 +117,9 @@ class CardViewController: UIViewController {
 
 This wrapper provides a complete solution with pre-built Flutter frameworks:
 
-- **Pre-built Frameworks**: Includes Flutter engine and all required plugins
-- **Smart Platform Detection**: Automatically uses Debug frameworks for simulator, Release for device
-- **ClevercardsFlutterWrapper**: Provides a clean Swift API for native developers
+- **Pre-built Frameworks**: Includes Flutter engine and all required plugins for each build configuration
+- **Swift Wrapper API**: Clean Swift classes (`FlutterModuleWrapper`, `CardDetail`, `CardService`) included in all subspecs
+- **Configuration-Specific**: Debug/Profile/Release subspecs with appropriate frameworks
 
 ### Why This Architecture?
 
