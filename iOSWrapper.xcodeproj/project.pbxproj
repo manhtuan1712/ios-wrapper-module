@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E3B627D2E03B60B008CC584 /* FlutterPluginRegistrant.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3B62782E03B60B008CC584 /* FlutterPluginRegistrant.xcframework */; };
+		0E3B627E2E03B60B008CC584 /* Flutter.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3B62772E03B60B008CC584 /* Flutter.xcframework */; };
+		0E3B627F2E03B60B008CC584 /* shared_preferences_foundation.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3B62732E03B60B008CC584 /* shared_preferences_foundation.xcframework */; };
+		0E3B62802E03B60B008CC584 /* path_provider_foundation.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3B62792E03B60B008CC584 /* path_provider_foundation.xcframework */; };
+		0E3B62812E03B60B008CC584 /* App.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3B626F2E03B60B008CC584 /* App.xcframework */; };
+		0E3B62822E03B60B008CC584 /* FlutterPluginRegistrant.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3B62712E03B60B008CC584 /* FlutterPluginRegistrant.xcframework */; };
+		0E3B62832E03B60B008CC584 /* Flutter.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3B62702E03B60B008CC584 /* Flutter.xcframework */; };
+		0E3B62842E03B60B008CC584 /* path_provider_foundation.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3B62722E03B60B008CC584 /* path_provider_foundation.xcframework */; };
+		0E3B62852E03B60B008CC584 /* App.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3B62762E03B60B008CC584 /* App.xcframework */; };
+		0E3B62862E03B60B008CC584 /* shared_preferences_foundation.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3B627A2E03B60B008CC584 /* shared_preferences_foundation.xcframework */; };
+		0E3B62872E03B60B008CC584 /* sqflite_darwin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3B627B2E03B60B008CC584 /* sqflite_darwin.xcframework */; };
+		0E3B62882E03B60B008CC584 /* sqflite_darwin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3B62742E03B60B008CC584 /* sqflite_darwin.xcframework */; };
 		0E636A532E01361A00F4ED15 /* iOSWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E636A472E01361A00F4ED15 /* iOSWrapper.framework */; };
 		0E636A7B2E01528B00F4ED15 /* ClevercardsFlutterWrapper.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 0E636A7A2E01528300F4ED15 /* ClevercardsFlutterWrapper.podspec */; };
 		0E636A832E0155C700F4ED15 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0E636A822E0155C500F4ED15 /* .gitignore */; };
@@ -24,18 +36,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E3B62352E03B137008CC584 /* App.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = App.xcframework; sourceTree = "<group>"; };
-		0E3B62362E03B137008CC584 /* Flutter.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:S8QB4VV633:FLUTTER.IO LLC"; lastKnownFileType = wrapper.xcframework; path = Flutter.xcframework; sourceTree = "<group>"; };
-		0E3B62372E03B137008CC584 /* FlutterPluginRegistrant.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FlutterPluginRegistrant.xcframework; sourceTree = "<group>"; };
-		0E3B62382E03B137008CC584 /* path_provider_foundation.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = path_provider_foundation.xcframework; sourceTree = "<group>"; };
-		0E3B62392E03B137008CC584 /* shared_preferences_foundation.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = shared_preferences_foundation.xcframework; sourceTree = "<group>"; };
-		0E3B623A2E03B137008CC584 /* sqflite_darwin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = sqflite_darwin.xcframework; sourceTree = "<group>"; };
-		0E3B623C2E03B137008CC584 /* App.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = App.xcframework; sourceTree = "<group>"; };
-		0E3B623D2E03B137008CC584 /* Flutter.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:S8QB4VV633:FLUTTER.IO LLC"; lastKnownFileType = wrapper.xcframework; path = Flutter.xcframework; sourceTree = "<group>"; };
-		0E3B623E2E03B137008CC584 /* FlutterPluginRegistrant.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FlutterPluginRegistrant.xcframework; sourceTree = "<group>"; };
-		0E3B623F2E03B137008CC584 /* path_provider_foundation.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = path_provider_foundation.xcframework; sourceTree = "<group>"; };
-		0E3B62402E03B137008CC584 /* shared_preferences_foundation.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = shared_preferences_foundation.xcframework; sourceTree = "<group>"; };
-		0E3B62412E03B137008CC584 /* sqflite_darwin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = sqflite_darwin.xcframework; sourceTree = "<group>"; };
+		0E3B626F2E03B60B008CC584 /* App.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = App.xcframework; sourceTree = "<group>"; };
+		0E3B62702E03B60B008CC584 /* Flutter.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:S8QB4VV633:FLUTTER.IO LLC"; lastKnownFileType = wrapper.xcframework; path = Flutter.xcframework; sourceTree = "<group>"; };
+		0E3B62712E03B60B008CC584 /* FlutterPluginRegistrant.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FlutterPluginRegistrant.xcframework; sourceTree = "<group>"; };
+		0E3B62722E03B60B008CC584 /* path_provider_foundation.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = path_provider_foundation.xcframework; sourceTree = "<group>"; };
+		0E3B62732E03B60B008CC584 /* shared_preferences_foundation.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = shared_preferences_foundation.xcframework; sourceTree = "<group>"; };
+		0E3B62742E03B60B008CC584 /* sqflite_darwin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = sqflite_darwin.xcframework; sourceTree = "<group>"; };
+		0E3B62762E03B60B008CC584 /* App.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = App.xcframework; sourceTree = "<group>"; };
+		0E3B62772E03B60B008CC584 /* Flutter.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:S8QB4VV633:FLUTTER.IO LLC"; lastKnownFileType = wrapper.xcframework; path = Flutter.xcframework; sourceTree = "<group>"; };
+		0E3B62782E03B60B008CC584 /* FlutterPluginRegistrant.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FlutterPluginRegistrant.xcframework; sourceTree = "<group>"; };
+		0E3B62792E03B60B008CC584 /* path_provider_foundation.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = path_provider_foundation.xcframework; sourceTree = "<group>"; };
+		0E3B627A2E03B60B008CC584 /* shared_preferences_foundation.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = shared_preferences_foundation.xcframework; sourceTree = "<group>"; };
+		0E3B627B2E03B60B008CC584 /* sqflite_darwin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = sqflite_darwin.xcframework; sourceTree = "<group>"; };
 		0E636A472E01361A00F4ED15 /* iOSWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iOSWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E636A522E01361A00F4ED15 /* iOSWrapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSWrapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E636A7A2E01528300F4ED15 /* ClevercardsFlutterWrapper.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = ClevercardsFlutterWrapper.podspec; sourceTree = "<group>"; };
@@ -48,15 +60,11 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		0E636A492E01361A00F4ED15 /* iOSWrapper */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = iOSWrapper;
 			sourceTree = "<group>";
 		};
 		0E636A562E01361A00F4ED15 /* iOSWrapperTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = iOSWrapperTests;
 			sourceTree = "<group>";
 		};
@@ -67,6 +75,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E3B627D2E03B60B008CC584 /* FlutterPluginRegistrant.xcframework in Frameworks */,
+				0E3B627E2E03B60B008CC584 /* Flutter.xcframework in Frameworks */,
+				0E3B627F2E03B60B008CC584 /* shared_preferences_foundation.xcframework in Frameworks */,
+				0E3B62802E03B60B008CC584 /* path_provider_foundation.xcframework in Frameworks */,
+				0E3B62812E03B60B008CC584 /* App.xcframework in Frameworks */,
+				0E3B62822E03B60B008CC584 /* FlutterPluginRegistrant.xcframework in Frameworks */,
+				0E3B62832E03B60B008CC584 /* Flutter.xcframework in Frameworks */,
+				0E3B62842E03B60B008CC584 /* path_provider_foundation.xcframework in Frameworks */,
+				0E3B62852E03B60B008CC584 /* App.xcframework in Frameworks */,
+				0E3B62862E03B60B008CC584 /* shared_preferences_foundation.xcframework in Frameworks */,
+				0E3B62872E03B60B008CC584 /* sqflite_darwin.xcframework in Frameworks */,
+				0E3B62882E03B60B008CC584 /* sqflite_darwin.xcframework in Frameworks */,
 				D1E1423709D84B2EF3323F54 /* Pods_iOSWrapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,28 +102,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0E3B623B2E03B137008CC584 /* Debug */ = {
+		0E3B62752E03B60B008CC584 /* Debug */ = {
 			isa = PBXGroup;
 			children = (
-				0E3B62352E03B137008CC584 /* App.xcframework */,
-				0E3B62362E03B137008CC584 /* Flutter.xcframework */,
-				0E3B62372E03B137008CC584 /* FlutterPluginRegistrant.xcframework */,
-				0E3B62382E03B137008CC584 /* path_provider_foundation.xcframework */,
-				0E3B62392E03B137008CC584 /* shared_preferences_foundation.xcframework */,
-				0E3B623A2E03B137008CC584 /* sqflite_darwin.xcframework */,
+				0E3B626F2E03B60B008CC584 /* App.xcframework */,
+				0E3B62702E03B60B008CC584 /* Flutter.xcframework */,
+				0E3B62712E03B60B008CC584 /* FlutterPluginRegistrant.xcframework */,
+				0E3B62722E03B60B008CC584 /* path_provider_foundation.xcframework */,
+				0E3B62732E03B60B008CC584 /* shared_preferences_foundation.xcframework */,
+				0E3B62742E03B60B008CC584 /* sqflite_darwin.xcframework */,
 			);
 			path = Debug;
 			sourceTree = "<group>";
 		};
-		0E3B62422E03B137008CC584 /* Release */ = {
+		0E3B627C2E03B60B008CC584 /* Release */ = {
 			isa = PBXGroup;
 			children = (
-				0E3B623C2E03B137008CC584 /* App.xcframework */,
-				0E3B623D2E03B137008CC584 /* Flutter.xcframework */,
-				0E3B623E2E03B137008CC584 /* FlutterPluginRegistrant.xcframework */,
-				0E3B623F2E03B137008CC584 /* path_provider_foundation.xcframework */,
-				0E3B62402E03B137008CC584 /* shared_preferences_foundation.xcframework */,
-				0E3B62412E03B137008CC584 /* sqflite_darwin.xcframework */,
+				0E3B62762E03B60B008CC584 /* App.xcframework */,
+				0E3B62772E03B60B008CC584 /* Flutter.xcframework */,
+				0E3B62782E03B60B008CC584 /* FlutterPluginRegistrant.xcframework */,
+				0E3B62792E03B60B008CC584 /* path_provider_foundation.xcframework */,
+				0E3B627A2E03B60B008CC584 /* shared_preferences_foundation.xcframework */,
+				0E3B627B2E03B60B008CC584 /* sqflite_darwin.xcframework */,
 			);
 			path = Release;
 			sourceTree = "<group>";
@@ -111,8 +131,8 @@
 		0E636A3D2E01361A00F4ED15 = {
 			isa = PBXGroup;
 			children = (
-				0E3B623B2E03B137008CC584 /* Debug */,
-				0E3B62422E03B137008CC584 /* Release */,
+				0E3B62752E03B60B008CC584 /* Debug */,
+				0E3B627C2E03B60B008CC584 /* Release */,
 				0E636A822E0155C500F4ED15 /* .gitignore */,
 				0E636A7A2E01528300F4ED15 /* ClevercardsFlutterWrapper.podspec */,
 				0E636A492E01361A00F4ED15 /* iOSWrapper */,
@@ -270,7 +290,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputPaths = (
+			);
 			name = "[CP-User] Run Flutter Build clevercard_module Script";
+			outputPaths = (
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../clevercard-module/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
@@ -280,7 +304,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputPaths = (
+			);
 			name = "[CP-User] Embed Flutter Build clevercard_module Script";
+			outputPaths = (
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../clevercard-module/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh embed_and_thin";
