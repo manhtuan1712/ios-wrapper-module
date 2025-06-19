@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ClevercardsFlutterWrapper'
-  s.version          = '1.3.3'
+  s.version          = '1.3.4'
   s.summary          = 'iOS wrapper for Clevercards Flutter module'
   s.homepage         = 'https://github.com/manhtuan1712/flutter-module'
   s.license          = { :type => 'MIT' }
@@ -14,8 +14,7 @@ Pod::Spec.new do |s|
     'DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER' => 'NO'
   }
   
-  # Swift wrapper source files
-  s.source_files = 'iOSWrapper/*.{h,m,swift}'
+  # Swift version
   s.swift_version = '5.0'
   
   # Preserve all build configuration directories
@@ -25,6 +24,7 @@ Pod::Spec.new do |s|
   s.default_subspec = 'Release'
   
   s.subspec 'Debug' do |debug|
+    debug.source_files = 'iOSWrapper/*.{h,m,swift}'
     debug.ios.vendored_frameworks = 'Debug/*.xcframework'
     debug.pod_target_xcconfig = {
       'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386',
@@ -35,6 +35,7 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'Profile' do |profile|
+    profile.source_files = 'iOSWrapper/*.{h,m,swift}'
     profile.ios.vendored_frameworks = 'Profile/*.xcframework'
     profile.pod_target_xcconfig = {
       'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386',
@@ -45,6 +46,7 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'Release' do |release|
+    release.source_files = 'iOSWrapper/*.{h,m,swift}'
     release.ios.vendored_frameworks = 'Release/*.xcframework'
     release.pod_target_xcconfig = {
       'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386',
